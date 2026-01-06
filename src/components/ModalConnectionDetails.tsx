@@ -1,6 +1,6 @@
 import cx from 'clsx';
 import { formatDistance } from 'date-fns';
-import { enUS, zhCN, zhTW } from 'date-fns/locale';
+import { enUS, faIR, zhCN, zhTW } from 'date-fns/locale';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Modal from 'react-modal';
@@ -25,6 +25,8 @@ export default function ModalConnectionDetails({ isOpen, onRequestClose, connect
     locale = zhCN;
   } else if (i18n.language === 'zh-TW') {
     locale = zhTW;
+  } else if (i18n.language === 'fa' || i18n.language === 'fa-IR') {
+    locale = faIR;
   }
 
   if (!connection) return null;

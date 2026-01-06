@@ -1,5 +1,5 @@
 import { formatDistance, Locale } from 'date-fns';
-import { enUS, zhCN, zhTW } from 'date-fns/locale';
+import { enUS, faIR, zhCN, zhTW } from 'date-fns/locale';
 import React from 'react';
 import { ArrowDown, ArrowDownCircle, ArrowUp, X } from 'react-feather';
 import { useTranslation } from 'react-i18next';
@@ -23,6 +23,8 @@ const ConnectionCard = React.memo(function ConnectionCard({ conn, onDisconnect, 
     locale = zhCN;
   } else if (i18n.language === 'zh-TW') {
     locale = zhTW;
+  } else if (i18n.language === 'fa' || i18n.language === 'fa-IR') {
+    locale = faIR;
   } else {
     locale = enUS;
   }

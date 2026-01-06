@@ -2,7 +2,7 @@ import './ConnectionTable.scss';
 
 import cx from 'clsx';
 import { formatDistance, Locale } from 'date-fns';
-import { enUS, zhCN, zhTW } from 'date-fns/locale';
+import { enUS, faIR, zhCN, zhTW } from 'date-fns/locale';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { ArrowDown, ArrowUp, ChevronDown, Sliders, XCircle } from 'react-feather';
 import { useTranslation } from 'react-i18next';
@@ -149,6 +149,8 @@ function Table({ data, columns, hiddenColumns, apiConfig, height }) {
     locale = zhCN;
   } else if (i18n.language === 'zh-TW') {
     locale = zhTW;
+  } else if (i18n.language === 'fa' || i18n.language === 'fa-IR') {
+    locale = faIR;
   } else {
     locale = enUS;
   }
